@@ -1,33 +1,39 @@
-# Daire Alan Hesaplama
+# Node.js Bootcamp Assignments
 
-Bu program bir dairenin alanını ve çevresini hesaplar.
+Bu repository Node.js bootcamp sürecindeki ödevlerimi içerir.
+
+## Projeler
+
+### 📁 [Ödev 1 - Daire Alan Hesaplama](./odev-1-circle-area/)
+- Basit daire alan ve çevre hesaplama programı
+- Temel JavaScript kavramları
+- Konsol çıktısı
+
+### 📁 [Ödev 2 - Blog Post Sistemi](./odev-2-post-blog/)
+- Blog post listeleme ve ekleme
+- Array manipülasyonu
+- Fonksiyon kullanımı
 
 ## Kullanım
 
+Her proje kendi klasöründe bağımsız olarak çalışır:
+
 ```bash
+# Ödev 1
+cd odev-1-circle-area
 node circle-area.js
+
+# Ödev 2  
+cd odev-2-post-blog
+node blog.js
 ```
 
-## Açıklama
+## Teknolojiler
 
-Program yarıçapı 5 olan bir dairenin:
-- Alanını (π × r²)
-- Çevresini (2 × π × r)
+- Node.js
+- JavaScript (ES6+)
+- Git & GitHub
 
-hesaplar ve ekrana yazdırır.
+## Lisans
 
-## Örnek Çıktı
-
-```
-Yarıçap: 5
-Alan: 78.53975
-Çevre: 31.4159
-```
-
-## Farklı Yarıçap Değerleri
-
-Farklı yarıçap değerleri denemek için `circle-area.js` dosyasındaki ilk satırdaki `radius` değerini değiştirin:
-
-```javascript
-const radius = 10; // Burayı değiştirin
-```
+MIT License 
