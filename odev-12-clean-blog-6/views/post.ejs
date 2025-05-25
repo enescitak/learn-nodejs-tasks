@@ -1,0 +1,29 @@
+<%- include('partials/_header') %>
+
+<!-- Hero Section -->
+<header class="hero">
+  <div class="hero-content">
+    <h1><%= post.title %></h1>
+    <div class="subheading">Posted on <%= post.dateCreated.toDateString() %></div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="post-content">
+  <div class="container">
+    <div class="post-body">
+      <p><%= post.detail %></p>
+    </div>
+    
+    <div class="post-navigation">
+      <a href="/" class="btn btn-back">← Ana Sayfaya Dön</a>
+      <a href="/posts/<%= post._id %>/edit" class="btn btn-edit">✏️ Düzenle</a>
+      
+      <form method="POST" action="/posts/<%= post._id %>?_method=DELETE" style="display: inline;">
+        <button type="submit" class="btn btn-delete" onclick="return confirm('Bu postu silmek istediğinizden emin misiniz?')">🗑️ Sil</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/_footer') %> 
