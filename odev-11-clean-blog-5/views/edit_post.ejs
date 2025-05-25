@@ -1,0 +1,31 @@
+<%- include('partials/_header') %>
+
+<!-- Hero Section -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Edit Post</h1>
+    <div class="subheading">Update your thoughts</div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="form-container">
+  <form method="POST" action="/posts/<%= post._id %>?_method=PUT">
+    <div class="form-group">
+      <label for="title">Post Title</label>
+      <input type="text" class="form-control" id="title" name="title" value="<%= post.title %>" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="detail">Content</label>
+      <textarea class="form-control" id="detail" name="detail" required><%= post.detail %></textarea>
+    </div>
+    
+    <div class="form-actions">
+      <button type="submit" class="btn">Update Post</button>
+      <a href="/posts/<%= post._id %>" class="btn btn-cancel">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<%- include('partials/_footer') %> 
