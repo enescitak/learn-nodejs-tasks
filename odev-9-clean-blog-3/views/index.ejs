@@ -1,0 +1,32 @@
+<%- include('partials/_header') %>
+
+<!-- Hero Section -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Clean Blog</h1>
+    <div class="subheading">A Blog Theme by Start Bootstrap</div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="main-content">
+  <% if (posts && posts.length > 0) { %>
+    <% posts.forEach(post => { %>
+      <!-- Post Preview -->
+      <div class="post-preview">
+        <h2><a href="#"><%= post.title %></a></h2>
+        <h3><%= post.detail.substring(0, 150) %>...</h3>
+        <p class="post-meta">Posted on <%= post.dateCreated.toDateString() %></p>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <!-- Default Posts when no data -->
+    <div class="post-preview">
+      <h2><a href="#">Henüz hiç post yok</a></h2>
+      <h3>İlk postunuzu eklemek için "Add New Post" sayfasını kullanın.</h3>
+      <p class="post-meta">Clean Blog</p>
+    </div>
+  <% } %>
+</div>
+
+<%- include('partials/_footer') %> 
