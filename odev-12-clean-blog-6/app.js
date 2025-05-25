@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
@@ -8,8 +9,9 @@ const pageRoutes = require('./routes/pageRoutes');
 
 const app = express();
 
-// MongoDB bağlantısı
-mongoose.connect('mongodb://localhost/cleanblog-test-db');
+// MongoDB bağlantısı - Environment variable kullanımı
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cleanblog-test-db';
+mongoose.connect(mongoURI);
 
 // Middleware'ler
 app.use(express.static('public', {
@@ -29,6 +31,8 @@ app.set('view engine', 'ejs');
 app.use('/', postRoutes);
 app.use('/', pageRoutes);
 
-app.listen(2100, () => {
-  console.log('Sunucu 2100 portunda başlatıldı');
+// Port configuration - Environment variable kullanımı
+const PORT = process.env.PORT || 2100;
+app.listen(PORT, () => {
+  console.log(`Sunucu ${PORT} portunda başlatıldı`);
 }); 
