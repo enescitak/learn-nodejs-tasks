@@ -1,0 +1,1 @@
+const { circleArea, circleCircumference } = require('./circle'); const r = 5; const area = circleArea(r); const circumference = circleCircumference(r); console.log('Yarıçap: ' + r); console.log('Alan: ' + area); console.log('Çevre: ' + circumference);
